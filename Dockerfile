@@ -41,6 +41,7 @@ COPY php.ini /etc/php82/php.ini
 RUN cd /tmp/ && wget -c https://github.com/glpi-project/glpi/releases/download/10.0.11/glpi-10.0.11.tgz && tar -xvf glpi-10.0.11.tgz && rm glpi-10.0.11.tgz && mv glpi /var/www/html
 RUN rm -r /var/www/localhost
 COPY downstream.php /var/www/html/inc/downstream.php
+RUN rm -r /var/www/html/marketplace
 RUN mkdir -p /glpi/config
 RUN mkdir -p /glpi/logs
 RUN mkdir -p /glpi/data

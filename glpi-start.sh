@@ -10,5 +10,6 @@ fi
 if [ -f /glpi/config/glpicrypt.key ] && [ -f /glpi/config/config_db.php ]; then
     rm -rf /var/www/html/install/install.php
 fi
+chown -R nobody:nobody /var/www/html/marketplace
 chown -R nobody:nobody /glpi
 php-fpm82 && lighttpd -D -f /etc/lighttpd/lighttpd.conf
